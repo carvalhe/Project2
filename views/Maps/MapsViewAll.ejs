@@ -1,0 +1,28 @@
+
+<html>
+<head>
+    <title>Maps</title>
+</head>
+<body>
+<h1>Maps</h1>
+<a href="/Maps/add">Add New Map</a><br />
+
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Type</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Maps/?Map_id=<%= result[i].Map_id %>"><%= result[i].Map_Name %></a></td>
+        <td><%= result[i].Map_Type %></td>
+        <td><form action="/Maps/delete/">
+                <input type="hidden" name="Map_id" id="Map_id" value="<%= result[i].Map_id%>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

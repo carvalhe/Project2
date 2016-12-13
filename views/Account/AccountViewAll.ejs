@@ -1,0 +1,28 @@
+
+<html>
+<head>
+    <title>Accounts</title>
+</head>
+<body>
+<h1>Accounts</h1>
+<a href="/Account/add">Add New Account</a><br />
+
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Email</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Account/?Account_id=<%= result[i].Account_id %>"><%= result[i].AccountName %></a></td>
+        <td><%= result[i].AccountEmail %></td>
+        <td><form action="/Account/delete/">
+                <input type="hidden" name="Account_id" id="Account_id" value="<%= result[i].Account_id%>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
