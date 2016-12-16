@@ -6,8 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var skill = require('./routes/skill_routes');
-//var OWCharacter = require('./routes/Character_routes');
+var Character = require('./routes/Character_routes');
 var Maps = require('./routes/Map_routes');
 var Account = require('./routes/Account_routes');
 var About = require('./routes/About_routes');
@@ -28,8 +27,7 @@ app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/skill', skill);
-//app.use('/OWCharacter', OWCharacter);
+app.use('/Character', Character);
 app.use('/Maps', Maps);
 app.use('/Account', Account);
 app.use('/About', About);
