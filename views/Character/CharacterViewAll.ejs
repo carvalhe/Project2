@@ -1,0 +1,31 @@
+<% include ../headfoot/header.ejs%>
+
+<html>
+<head>
+    <title>Characters</title>
+</head>
+<body>
+<h1>Characters</h1>
+<a href="/Character/add">Add New Character</a><br />
+
+<br />
+
+<table border="1">
+    <tr><th>Name</th><th>Type</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Character/?Character_id=<%= result[i].Character_id %>"><%= result[i].Character_Name %></a></td>
+        <td><%= result[i].Character_Type %></td>
+        <td><form action="/Character/delete/">
+                <input type="hidden" name="Character_id" id="Character_id" value="<%= result[i].Character_id%>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
+
+<% include ../headfoot/footer.ejs%>

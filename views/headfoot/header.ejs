@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <% if (typeof js_includes !== 'undefined') { %>
+    <% for(var i=0; i < js_includes.length; i++) { %>
+    <script src="<%= js_includes[i] %>"></script>
+    <% }%>
+    <% }%>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+
+    body{
+        background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2016/05/u7GYupt.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+        #header {
+            text-align: left;
+
+
+        }
+
+        img:hover {
+            opacity:0.5;
+            cursor: pointer;
+            transition: 0.5s;
+
+        }
+
+
+        img:hover:after{
+
+        }
+
+        img {
+            width: 25%;
+            height: 25%;
+        }
+
+
+        #nav {
+            border-style: solid;
+            border-width: 2px;
+            border-color: orange;
+            text-align:center;
+            opacity:0.75;
+            float:left;
+            padding:10px;
+            height:100%;
+            width:22%;
+            font-size: 110%;
+        }
+
+        #content {
+            float:right;
+            text-align:left;
+            padding:25px;
+            width:60%;
+            height:100%;
+        }
+
+        #footer {
+            position:fixed;bottom:0;
+            width:90%;
+            background-color:gray;
+            opacity:.50;
+            text-align:center;
+            float:bottom;
+            padding:5px;
+        }
+
+        .crossRotate:hover {
+            transform: rotate(0deg);
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="header">
+
+</div>
+
+<br>
+<br>
+
+<div id="nav">
+    <font color="white">
+        <a href="/skill/all">Skills - View All</a>
+        <br/><br/>
+        <a href="/OWCharacter/all">Characters - View All</a>
+        <br/><br/>
+        <a href="/Maps/all">Maps - View All</a>
+        <br/><br/>
+        <a href="/Account/all">Accounts - View All</a>
+        <br/><br/>
+        <a href="/About">About Page</a>
+        <br/><br/>
+        <!--<a href ="/" style="color: white">Home</a>-->
+
+
+
+
+
+
+    </font>
+</div>
