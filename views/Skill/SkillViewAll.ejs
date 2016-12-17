@@ -1,0 +1,31 @@
+<% include ../headfoot/header.ejs%>
+
+<html>
+<head>
+    <title>Skills</title>
+</head>
+<body>
+<h1>Skills</h1>
+<a href="/Skill/add">Add New Skill</a><br />
+
+<br />
+
+<table border="1">
+    <tr><th>Account Email</th><th>Current Skill Rating</th><th>Past Skill Rating</th><!--<th>Win Loss Ratio</th>--><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Skill/?Skill_id=<%= result[i].Skill_id %>"><%= result[i].AccountEmail %></a></td>
+        <td><%= result[i].Cur_Skill_Rating %></td><td><%= result[i].Past_Skill_Rating %></td>
+        <td><form action="/Skill/delete/">
+                <input type="hidden" name="Skill_id" id="Skill_id" value="<%= result[i].Skill_id%>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
+
+<% include ../headfoot/footer.ejs%>
