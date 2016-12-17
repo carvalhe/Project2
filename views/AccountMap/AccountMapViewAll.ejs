@@ -1,0 +1,33 @@
+<% include ../headfoot/header.ejs%>
+
+<html>
+<head>
+    <title>Account Map Stats</title>
+</head>
+<body>
+<h1>Account Map Stats</h1>
+<a href="/AccountCharacter/add">Add New Account Stats</a><br />
+
+<br />
+
+<table border="1">
+    <tr><th>Account Email</th><th>Most Played Map</th><th>Best Map Type</th><th>Best Map</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/Character/?Character_id=<%= result[i].Character_id %>"><%= result[i].AccountEmail %></a></td>
+        <td><%= result[i].Most_Played_Map %></td>
+        <td><%= result[i].Best_Map_Type %></td>
+        <td><%= result[i].Best_Map %></td>
+        <td><form action="/Character/delete/">
+                <input type="hidden" name="Character_id" id="Character_id" value="<%= result[i].Character_id%>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
+
+<% include ../headfoot/footer.ejs%>

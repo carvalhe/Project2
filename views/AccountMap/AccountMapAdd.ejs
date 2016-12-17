@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Add New Most Played Map, Map Type, and Best Map</title>
+</head>
+<body>
+<h1><%= title %></h1>
+<form action="/AccountMap/insert" method="get">
+    Account Email: <input id="AccountEmail" name="AccountEmail" type="text" />
+    <br />
+    <br />
+    Most Played Map Name: <input id="Most_Played_Map" name="Most_Played_Map" type="text" />
+    <select id="Map_id" name="Map_id">
+        <% for(var i=0; Map.length > i; i++ ) { %>
+        <option value="<%= Map[i].Map_id %>"><%= Map[i].Map_Name %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+    Best Map Type:
+    <select name="Best_Map_Type" name="Best_Map_Type">
+        <option value="Assult">Assult</option>
+        <option value="Escort">Escort</option>
+        <option value="Control">Control</option>
+        <option value="Hybrid">Hybrid</option>
+    </select>
+    <br />
+    <br />
+    Best Map:
+    <select id="Map_id" name="Map_id">
+        <% for(var i=0; Map.length > i; i++ ) { %>
+        <option value="<%= Map[i].Map_id %>"><%= Map[i].Map_Name + ', ' + Map[i].Map_Type %></option>
+        <% } %>
+    </select>
+    <br />
+    <br />
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

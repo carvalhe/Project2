@@ -12,6 +12,7 @@ var Account = require('./routes/Account_routes');
 var About = require('./routes/About_routes');
 var Skill = require('./routes/Skill_routes');
 var AccountCharacter = require('./routes/AccountCharacter_routes');
+var AccountMap = require('./routes/AccountMap_routes');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.use('/Account', Account);
 app.use('/About', About);
 app.use('/Skill', Skill);
 app.use('/AccountCharacter', AccountCharacter);
+app.use('/AccountMap', AccountMap);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
